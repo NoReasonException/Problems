@@ -8,18 +8,12 @@ public class Main {
     public static void main(String args[]) {
         Tree one = new Tree(null, null, 1);
         Tree six = new Tree(null, null, 6);
-
         Tree twelve = new Tree(null, null, 12);
         Tree seventeen = new Tree(null, null, 17);
-
         Tree five = new Tree(one, six, 5);
         Tree fiftteen = new Tree(twelve, seventeen, 15);
-
         Tree ten = new Tree(five, fiftteen, 10);
-        Main b=new Main();
-        b.dfs(ten);
-
-        for (String paths:b.getSolutions()) {
+        for (String paths:new Main().getSolutions(ten)) {
             System.out.println(paths);
         }
     }
@@ -40,7 +34,8 @@ public class Main {
         if(b.contains(v))b.remove(v);
     }
 
-    public ArrayList<String> getSolutions() {
+    public ArrayList<String> getSolutions(Tree v) {
+        this.dfs(v);
         return solutions;
     }
 }
