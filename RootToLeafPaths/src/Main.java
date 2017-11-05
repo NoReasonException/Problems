@@ -2,8 +2,9 @@ import java.util.ArrayList;
 
 public class Main {
     public ArrayList<Tree> b = new ArrayList<>();
-    public ArrayList<ArrayList<Tree>> solutions = new ArrayList<ArrayList<Tree>>();
+    public ArrayList<String> solutions = new ArrayList<>();
     public int index=0;
+    public StringBuilder tempBuilder=new StringBuilder();
     public static void main(String args[]) {
         Tree one = new Tree(null, null, 1);
         Tree six = new Tree(null, null, 6);
@@ -17,14 +18,19 @@ public class Main {
         Tree ten = new Tree(five, fiftteen, 10);
         Main b=new Main();
         b.dfs(ten);
-        b.printSol();
 
+        for (String paths:b.getSolutions()) {
+            System.out.println(paths);
+        }
     }
     public void dfs(Tree v){
         if (v.left==null && v.right==null){
-            solutions.add(new ArrayList<>());
-            solutions.get(index).addAll(b);
-            solutions.get(index).add(v);
+            for (int i = 0; i < b.size(); i++) {
+                tempBuilder.append(b.get(i).val+"->");
+            }
+            tempBuilder.append(v.val);
+            solutions.add(tempBuilder.toString());
+            tempBuilder.setLength(0);
             index+=1;
             return;
         }
@@ -33,13 +39,9 @@ public class Main {
         if(v.right!=null)dfs(v.right);
         if(b.contains(v))b.remove(v);
     }
-    public void printSol(){
-        for (int i = 0; i < solutions.size(); i++) {
-            for (int j = 0; j < solutions.get(i).size(); j++) {
-                System.out.print(solutions.get(i).get(j).val+"->");
-            }System.out.println();
 
-        }
+    public ArrayList<String> getSolutions() {
+        return solutions;
     }
 }
 
