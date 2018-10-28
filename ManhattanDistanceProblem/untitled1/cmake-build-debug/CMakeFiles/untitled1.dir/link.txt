@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/untitled1.dir/main.cpp.o CMakeFiles/untitled1.dir/State/State.cpp.o CMakeFiles/untitled1.dir/Table/Table.cpp.o CMakeFiles/untitled1.dir/Table/ManhattanTable/ManhattanTable.cpp.o  -o untitled1 

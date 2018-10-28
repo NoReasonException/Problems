@@ -1,0 +1,4 @@
+/home/noreasonexception/Desktop/Editors/clion-2018.1.5/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G "CodeBlocks - Unix Makefiles" /home/noreasonexception/Desktop/repo/ctci/CrackingTheCodingInterview/Chap1/untitled1
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/noreasonexception/Desktop/repo/ctci/CrackingTheCodingInterview/Chap1/untitled1/cmake-build-debug
